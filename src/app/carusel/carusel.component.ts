@@ -1,8 +1,9 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { ISlide } from "../models/slide";
 
 @Component({
   selector: "app-carusel",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="slider">
       <div>
@@ -25,7 +26,7 @@ import { ISlide } from "../models/slide";
       </div>
     </div>
   `,
-  styleUrls: ["carusel.component.css"],
+  styleUrls: ["carusel.component.css"]
 })
 export class CaruselComponent {
   @Input() slideList: ISlide[] = [];
